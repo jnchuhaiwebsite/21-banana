@@ -125,8 +125,8 @@ interface PricingPlan {
 
 // 设置SEO
 useSeo({
-  title: 'Nano Banana Pricing - See Free & Paid Subscription Plans',
-  description: 'Explore simple Nano Banana pricing on Nano Banana. Get unlimited AI art & video. Find the perfect plan and start for free!',
+  title: 'Nano Banana AI Image Editing Plans',
+  description: 'Explore simple Nano Banana pricing. Get unlimited AI image editing and find the plan that fits you best.',
 });
 
 // 引入auth认证
