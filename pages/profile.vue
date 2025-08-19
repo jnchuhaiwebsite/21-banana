@@ -483,7 +483,6 @@ import { ref, onMounted, onUnmounted, defineAsyncComponent, watch } from 'vue'
 import { useUserStore } from '~/stores/user'
 import { getOpusList, checkTask, getTimesLog } from '~/api'
 import { SparklesIcon } from '@heroicons/vue/24/outline'
-import { useNotificationStore } from '~/stores/notification'
 import { useNuxtApp } from 'nuxt/app'
 
 // Get user info
@@ -580,7 +579,6 @@ const creditPage = ref(1)
 const creditPageSize = ref(10)
 const totalPages = ref(1)
 
-const notificationStore = useNotificationStore()
 
 // 判断是否为视频类型
 const isVideoType = (taskType: number) => {
@@ -695,12 +693,7 @@ const fetchWorks = async () => {
     }
   } catch (error) {
     console.error('Failed to fetch works:', error)
-    notificationStore.addNotification({
-      taskId: `works-error-${Date.now()}`,
-      status: 'error',
-      message: 'Failed to load works',
-      timestamp: Date.now()
-    })
+    $toast.error('Failed to load works')
   } finally {
     loading.value = false
   }
@@ -753,12 +746,7 @@ const handleDownload = async (fileUrl: string) => {
     window.URL.revokeObjectURL(url)
   } catch (error) {
     console.error('Download failed:', error)
-    notificationStore.addNotification({
-      taskId: `download-error-${Date.now()}`,
-      status: 'error',
-      message: 'Download failed, please try again later',
-      timestamp: Date.now()
-    })
+    $toast.error('Download failed, please try again later')
   } finally {
     isDownloading.value = false
   }
@@ -801,12 +789,7 @@ const fetchCreditRecords = async () => {
     creditRecords.value = data.list
   } catch (error) {
     console.error('Failed to fetch credit records:', error)
-    notificationStore.addNotification({
-      taskId: `credits-error-${Date.now()}`,
-      status: 'error',
-      message: 'Failed to load credit records',
-      timestamp: Date.now()
-    })
+    $toast.error('Failed to load credit records')
   } finally {
     creditLoading.value = false
   }
