@@ -339,7 +339,7 @@ const prompt = ref('');
 const promptInput = ref<HTMLTextAreaElement | null>(null);
 const selectedImage = ref<File | null>(null);
 const imagePreview = ref<string>('');
-const mainPreview = ref<string>('https://resp.elevenMusicPro.com/nano/images/nano-banana-ai-demo.webp');
+const mainPreview = ref<string>('https://resp.elevenMusicPro.com/nano/images/nano-banana-ai2.webp');
 const fileInput = ref<HTMLInputElement | null>(null);
 
 const qualityLevel = ref(3);
