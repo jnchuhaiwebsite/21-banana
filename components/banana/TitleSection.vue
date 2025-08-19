@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[80px] mb-10 flex flex-col items-center relative z-10 text-center">
+  <div class="text-center">
     <h1 class="font-['Poppins'] text-6xl md:text-8xl font-extrabold mb-6 bg-gradient-to-r from-banana-primary-yellow to-banana-secondary-blue text-transparent bg-clip-text">
       {{ title }}
     </h1>
@@ -10,10 +10,14 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-  title: string
-  subtitle: string
-}
-
-defineProps<Props>()
+defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  subtitle: {
+    type: String,
+    required: true,
+  },
+});
 </script> 

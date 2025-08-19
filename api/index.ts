@@ -4,8 +4,8 @@ import { useRuntimeConfig } from 'nuxt/app'
 // console.log('当前环境:', process.env.NODE_ENV);
 
 const baseUrl = process.env.NODE_ENV === 'development'
-  ? 'https://art.midjourneyai.net'
-  : 'https://art.midjourneyai.net';
+  ? 'https://art.nano-banana-ai.net'
+  : 'https://art.nano-banana-ai.net';
 
 // const baseUrl = 'https://art.aimagen43.com';
 // const baseUrl = 'http://192.168.0.55:8686';
@@ -33,6 +33,8 @@ export const urlList = {
   blogList: baseUrl + '/api/cms/blogList', // 获取博客列表
   createTasksText: baseUrl + '/api/task/mj/create',  // 创建任务-文生图
   createTasks: baseUrl + '/api/task/mj/create',  // 创建任务
+
+  editImage: baseUrl + '/api/task/nano/editimg', // 编辑图片
 }
 
 /**
@@ -42,6 +44,7 @@ export const urlList = {
  */
 export const setUserInfo = async (data: any) => {
   try {
+    alert(12)
     // 如果已有有效Token，直接返回缓存的用户信息
     const token = getValidToken();
     if (token) {
@@ -89,6 +92,21 @@ export const setUserInfo = async (data: any) => {
 export const getCurrentUser = async () => {
   return apiRequest(urlList.getCurrentUser, 'GET', undefined, true);
 }
+
+/**
+ * 编辑图片
+ * @param data 图片数据
+ * @returns 图片结果
+ */
+export const editImage = async (data: any) => {
+  try {
+    return await apiRequest(urlList.editImage, 'POST', data, true);
+  } catch (error) {
+    console.error('编辑图片失败:', error);
+    throw error;
+  }
+}
+
 
 /**
  * 创建任务-图生视频

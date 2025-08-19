@@ -6,7 +6,7 @@ interface VideoTask {
   startTime: number
   isGenerating: boolean
   prompt: string
-  type: 'text-to-image' | 'image-to-image' | 'ai-video'
+  type: 'image Editor' | 'image-to-image' | 'ai-video'
   imageUrl?: string
   imageUrls?: string[]
   resolution: string
@@ -18,7 +18,7 @@ interface VideoTask {
 
 //生成耗时
 const durationConfig = {
-  'text-to-image': {
+  'image Editor': {
     relaxed: 180 * 1000,
     fast: 60 * 1000,
     turbo: 60 * 1000,
@@ -60,7 +60,7 @@ export const useVideoTaskStore = defineStore('videoTask', {
   },
   
   actions: {
-    startTask(taskId: string | null, speed: 'relaxed' | 'fast' | 'turbo', mode: 'text-to-image' | 'image-to-image' | 'ai-video') {
+    startTask(taskId: string | null, speed: 'relaxed' | 'fast' | 'turbo', mode: 'image Editor' | 'image-to-image' | 'ai-video') {
       const totalDuration = durationConfig[mode][speed];
 
       const task: VideoTask = {

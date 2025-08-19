@@ -223,8 +223,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   modelValue: () => ({}),
   hideModeSwitcher: false,
-  defaultMode: 'text-to-image',
-  availableModes: () => ['text-to-image', 'image-to-image', 'ai-video']
+  defaultMode: 'image Editor',
+  availableModes: () => ['image Editor', 'image-to-image', 'ai-video']
 })
 
 // Emits
@@ -242,7 +242,7 @@ const isGenerating = computed(() => !!videoTaskStore.currentTask?.isGenerating);
 const inputPanelsRef = ref<any>(null);
 
 const durationConfig = {
-  'text-to-image': {
+  'image Editor': {
     relaxed: 10,
     fast: 5,
     turbo: 2,
@@ -275,7 +275,7 @@ const estimatedTime = computed(() => {
 });
 
 // Reactive data
-const selectedMode = ref<string>(props.availableModes.includes(props.defaultMode) ? props.defaultMode : (props.availableModes[0] || 'text-to-image'))
+const selectedMode = ref<string>(props.availableModes.includes(props.defaultMode) ? props.defaultMode : (props.availableModes[0] || 'image Editor'))
 const selectedAspectRatio = ref('16:9')
 const selectedSpeed = ref('fast')
 const stylizationValue = ref(250)
@@ -334,7 +334,7 @@ const creditConfig: CreditConfig = {
     'fast': 8,
     'turbo': 12
   },
-  'text-to-image': {
+  'image Editor': {
     'relaxed': 4,
     'fast': 8,
     'turbo': 12
@@ -343,7 +343,7 @@ const creditConfig: CreditConfig = {
 
 // Mode configuration
 const allModes: Mode[] = [
-  { value: 'text-to-image', label: 'Text to Image', component: 'TextToImageInput' },
+  { value: 'image Editor', label: 'Text to Image', component: 'TextToImageInput' },
   { value: 'image-to-image', label: 'Image to Image', component: 'ImageToImageInput' },
   { value: 'ai-video', label: 'AI Video', component: 'AiVideoInput' }
 ]

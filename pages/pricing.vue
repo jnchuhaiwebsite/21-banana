@@ -1,11 +1,11 @@
 <template>
-  <div class="min-h-screen bg-blue-pale">
-    <main class="w-full mx-auto p-6 bg-blue-pale rounded-lg max-w-7xl min-h-screen">
+  <div class="min-h-screen bg-banana-dark-bg text-banana-text-light">
+    <main class="w-full mx-auto p-6 bg-banana-dark-bg rounded-lg max-w-7xl min-h-screen">
       <!-- 页面标题区域 -->
       <header>
         <PageHero 
-          title="Midjourney AI Video & Image Pricing"
-          subtitle="Unlock the full power of Midjourney with a plan that scales with your ambition. No hidden fees, cancel anytime."
+          title="Nano Banana AI Pricing"
+          subtitle="Unlock the full power of Nano Banana with a plan that scales with your ambition. No hidden fees, cancel anytime."
         />
       </header>
 
@@ -28,10 +28,10 @@
           v-for="(plan, index) in planData"
           :key="index"
           :class="[
-            'relative bg-blue-pricing rounded-xl p-6 flex flex-col h-full',
+            'relative bg-banana-card-bg rounded-xl p-6 flex flex-col h-full',
             plan.is_popular
-              ? 'border-2 border-blue-button shadow-xl scale-105 z-10'
-              : 'border border-blue-pricingborder shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300',
+              ? 'border-2 border-banana-primary-yellow shadow-2xl scale-105 z-10'
+              : 'border border-banana-border-color shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300',
             plan.price === 0 ? 'hidden md:flex' : 'flex'
           ]"
           :aria-labelledby="`plan-${index}-title`"
@@ -39,7 +39,7 @@
           <!-- 热门标签 -->
           <div
             v-if="plan.is_popular"
-            class="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-gradient-to-r from-blue-button to-blue-600 text-white text-sm font-semibold rounded-full z-20 shadow-lg"
+            class="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-gradient-to-r from-banana-primary-yellow to-banana-secondary-blue text-banana-dark-bg text-sm font-semibold rounded-full z-20 shadow-lg"
             aria-label="Most popular plan"
           >
             ⭐ Most Popular
@@ -49,19 +49,19 @@
           <header class="text-center mb-6">
             <h3 
               :id="`plan-${index}-title`"
-              class="text-2xl font-bold text-black mb-3"
+              class="text-2xl font-bold text-banana-text-light mb-3"
             >
               {{ plan.name }}
             </h3>
-            <p class="text-blue-pricingtext text-sm leading-relaxed" v-html="plan.description"></p>
+            <p class="text-banana-text-muted text-sm leading-relaxed" v-html="plan.description"></p>
           </header>
 
           <!-- 价格信息 -->
           <div class="mb-6 text-center">
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200 shadow-sm">
+            <div class="bg-gradient-to-br from-banana-dark-bg to-gray-900 rounded-xl p-6 border border-banana-border-color shadow-sm">
               <div class="inline-flex items-baseline gap-2">
-                <span class="text-4xl font-bold text-blue-button">${{ plan.price }}</span>
-                <span class="text-sm text-blue-pricingtext font-medium bg-white px-3 py-1 rounded-full shadow-sm">one-time</span>
+                <span class="text-4xl font-bold text-banana-primary-yellow">${{ plan.price }}</span>
+                <span class="text-sm text-banana-text-muted font-medium bg-banana-card-bg px-3 py-1 rounded-full shadow-sm">one-time</span>
               </div>
             </div>
           </div>
@@ -77,19 +77,18 @@
               ]"
               :aria-describedby="`plan-${index}-title`"
             >
-              <div v-if="upgradingPlanId === plan.code" class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white mr-2" aria-hidden="true"></div>
+              <div v-if="upgradingPlanId === plan.code" class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-current mr-2" aria-hidden="true"></div>
               {{ plan.button_text }}
             </button>
           </div>
 
           <!-- 功能特性列表 -->
           <section class="flex-grow" :aria-label="`${plan.name} plan features`">
-            <!-- <h4 class="text-sm font-semibold text-black mb-4 text-center">What's included:</h4> -->
             <ul class="space-y-4">
               <li
                 v-for="(feature, fIndex) in getPlanFeatures(plan)"
                 :key="fIndex"
-                class="flex items-start text-blue-pricingtext"
+                class="flex items-start text-banana-text-muted"
               >
                 <span class="mr-3 text-green-500 font-bold text-lg flex-shrink-0 mt-0.5" aria-hidden="true">✅</span>
                 <span class="text-sm leading-relaxed" v-html="feature"></span>
@@ -97,64 +96,6 @@
             </ul>
           </section>
         </article>
-      </section>
-
-      <!-- 常见问题区域 -->
-      <section 
-        class="mt-16 bg-blue-pricing rounded-xl border-2 border-blue-button shadow-lg"
-        aria-label="Frequently asked questions about pricing plans"
-      >
-        <!-- 标题部分 -->
-        <header class="px-8 py-6 border-b border-blue-pricingborder">
-          <h2 class="text-2xl font-bold text-black mb-2">
-            Frequently Asked Questions
-          </h2>
-          <p class="text-blue-pricingtext">
-            Get answers to common questions about our pricing plans and features.
-          </p>
-        </header>
-
-        <!-- FAQ内容区域 -->
-        <div class="p-8 space-y-6">
-          <!-- FAQ 1 -->
-          <div class="bg-blue-pale rounded-lg p-6 border border-blue-pricingborder">
-            <h3 class="text-lg font-semibold text-blue-dark mb-3 flex items-center">
-              <i class="fa-solid fa-question-circle text-blue-button mr-3"></i>
-              How do the credit packages work?
-            </h3>
-            <p class="text-blue-pricingtext leading-relaxed">
-              Our credit packages are one-time purchases that give you different amounts of credits to use for AI image and video generation. 
-              Each package offers better value as you buy more credits - larger packages provide more credits per dollar spent. 
-              Simply choose the package size that fits your creative needs and budget.
-            </p>
-          </div>
-
-          <!-- FAQ 2 -->
-          <div class="bg-blue-pale rounded-lg p-6 border border-blue-pricingborder">
-            <h3 class="text-lg font-semibold text-blue-dark mb-3 flex items-center">
-              <i class="fa-solid fa-question-circle text-blue-button mr-3"></i>
-              Do my purchased credits expire?
-            </h3>
-            <p class="text-blue-pricingtext leading-relaxed">
-              No! Your purchased credits never expire and remain in your account until you use them. 
-              This means you can use your credits at your own pace without worrying about time limits. 
-              Once you buy credits, they're yours to use whenever you want to create amazing AI content.
-            </p>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="bg-blue-pale rounded-lg p-6 border border-blue-pricingborder">
-            <h3 class="text-lg font-semibold text-blue-dark mb-3 flex items-center">
-              <i class="fa-solid fa-question-circle text-blue-button mr-3"></i>
-              Can I buy multiple credit packages?
-            </h3>
-            <p class="text-blue-pricingtext leading-relaxed">
-              Yes! You can purchase multiple credit packages at any time to add more credits to your account. 
-              All purchased credits will be added to your current balance immediately after payment. 
-              This gives you the flexibility to buy credits as needed without being locked into a subscription plan.
-            </p>
-          </div>
-        </div>
       </section>
     </main>
   </div>
@@ -181,8 +122,8 @@ interface PricingPlan {
 
 // 设置SEO
 useSeo({
-  title: 'Midjourney Pricing - See Free & Paid Subscription Plans',
-  description: 'Explore simple Midjourney pricing on Midjourney. Get unlimited AI art & video with V7. No Discord needed. Find the perfect plan and start for free!',
+  title: 'Nano Banana Pricing - See Free & Paid Subscription Plans',
+  description: 'Explore simple Nano Banana pricing on Nano Banana. Get unlimited AI art & video. Find the perfect plan and start for free!',
 });
 
 // 引入auth认证
@@ -229,12 +170,13 @@ const getPlanFeatures = (plan: PricingPlan): string[] => {
 
   // 获取按钮样式
 const getButtonClass = (plan: PricingPlan): string => {
+  return "bg-banana-primary-yellow text-banana-dark-bg hover:opacity-90";
   if (plan.price === 0) {
-    return "bg-gray-100 text-white hover:bg-gray-200";
+    return "bg-banana-border-color text-banana-text-muted cursor-not-allowed";
   } else if (plan.is_popular) {
-    return "bg-blue-button text-white hover:bg-blue-buttonhover";
+    return "bg-banana-primary-yellow text-banana-dark-bg hover:opacity-90";
   } else {
-    return "bg-blue-button text-white hover:bg-blue-buttonhover";
+    return "bg-banana-secondary-blue text-white hover:opacity-90";
   }
 };
 

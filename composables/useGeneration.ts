@@ -14,7 +14,7 @@ export function useGeneration() {
     videoTaskStore.startTask(
       null,
       params.speed as 'relaxed' | 'fast' | 'turbo',
-      params.mode as 'text-to-image' | 'image-to-image' | 'ai-video'
+      params.mode as 'image Editor' | 'image-to-image' | 'ai-video'
     );
 
     try {

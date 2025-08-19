@@ -20,8 +20,8 @@
           ref="parameterSettings"
           v-model="parameters"
           @generate="handleGenerate"
-          :available-modes="['text-to-image', 'image-to-image', 'ai-video']"
-          :default-mode="'text-to-image'"
+          :available-modes="['image Editor', 'image-to-image', 'ai-video']"
+          :default-mode="'image Editor'"
         />
       </div>
 
@@ -110,7 +110,7 @@ import { downloadFileWithFetch, generateDownloadFilename, getFileExtension } fro
 
 // 参数状态
 const parameters = ref({
-  mode: 'text-to-image',
+  mode: 'image Editor',
   aspectRatio: '16:9',
   speed: 'fast',
   stylization: 250,

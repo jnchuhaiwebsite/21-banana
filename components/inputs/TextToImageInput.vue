@@ -1,5 +1,5 @@
 <template>
-  <div class="text-to-image-input">
+  <div class="image Editor-input">
     <div class="input-group">
       <label class="input-label">Prompt Description</label>
       <textarea
@@ -116,7 +116,7 @@ defineExpose({
 </script>
 
 <style scoped>
-.text-to-image-input {
+.image Editor-input {
   @apply w-full;
 }
 

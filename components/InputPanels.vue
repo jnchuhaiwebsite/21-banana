@@ -1,7 +1,7 @@
 <template>
   <div class="input-panels">
     <div 
-      v-if="selectedMode === 'text-to-image'"
+      v-if="selectedMode === 'image Editor'"
       class="input-group"
     >
       <TextToImageInput 
@@ -56,7 +56,7 @@ const aiVideoInputRef = ref<any>(null)
 // Get current input component based on selected mode
 const getCurrentInputComponent = () => {
   switch (props.selectedMode) {
-    case 'text-to-image':
+    case 'image Editor':
       return textToImageInputRef.value
     case 'image-to-image':
       return imageToImageInputRef.value

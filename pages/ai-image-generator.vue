@@ -16,8 +16,8 @@ Experience the future of digital art. Transform your text and images into stunni
           ref="parameterSettingsRef"
           v-model="parameters"
           @generate="handleGenerate"
-          :available-modes="['text-to-image', 'image-to-image']"
-          :default-mode="'text-to-image'"
+          :available-modes="['image Editor', 'image-to-image']"
+          :default-mode="'image Editor'"
         />
       </div>
 
@@ -133,7 +133,7 @@ const withLoginCheck = async (callback: () => void | Promise<void>) => {
 
 // 参数状态
 const parameters = ref({
-  mode: 'text-to-image',
+  mode: 'image Editor',
   aspectRatio: '16:9',
   speed: 'fast',
   stylization: 250,

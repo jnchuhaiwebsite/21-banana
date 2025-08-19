@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: 'midjourney video generator',
+      title: 'Nano Banana AI',
       htmlAttrs: {
         lang: 'en' // 设置 HTML 语言
       },
@@ -56,7 +56,7 @@ export default defineNuxtConfig({
       ], // 外部脚本
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://www.midjourneyai.net' }
+        { rel: 'canonical', href: 'https://www.nano-banana-ai.net' }
       ]
     }
   },

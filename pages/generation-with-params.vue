@@ -93,7 +93,7 @@ const PageHero = defineAsyncComponent(() => import('~/components/PageHero.vue'))
 // 响应式数据
 const paramSettings = ref(null)
 const parameters = ref({
-  mode: 'text-to-image',
+  mode: 'image Editor',
   aspectRatio: '16:9',
   speed: 'fast',
   stylization: 250,

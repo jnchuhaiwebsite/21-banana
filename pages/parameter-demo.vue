@@ -30,7 +30,7 @@ import ParameterSettings from '~/components/ParameterSettings.vue'
 
 // 参数状态
 const parameters = ref({
-  mode: 'text-to-image',
+  mode: 'image Editor',
   aspectRatio: '16:9',
   speed: 'fast',
   stylization: 250,

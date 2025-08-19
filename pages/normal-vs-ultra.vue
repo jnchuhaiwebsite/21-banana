@@ -11,7 +11,7 @@
         </header>
 
         <div class="prose prose-invert prose-lg max-w-none mx-auto">
-          <p>In June 2024, Google launched Imagen 4, its powerful new text-to-image model family, including the high-end Imagen 4 Ultra. This update not only marks a leap in performance but also sets a new standard for image generation accuracy and text rendering. Both versions are now available on our platform. Let's explore their differences.</p>
+          <p>In June 2024, Google launched Imagen 4, its powerful new image Editor model family, including the high-end Imagen 4 Ultra. This update not only marks a leap in performance but also sets a new standard for image generation accuracy and text rendering. Both versions are now available on our platform. Let's explore their differences.</p>
 
           <div class="not-prose my-12 flex justify-center items-stretch gap-0">
             <!-- Left Image: Normal -->

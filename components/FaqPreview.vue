@@ -86,7 +86,7 @@ defineOptions({
 const faqPreviewData = [
     {
       question: "What can I create with Midjourney?",
-      answer: "Midjourney is a powerful AI platform that allows you to create stunning, high-quality images and videos from text prompts or by transforming existing images. You can generate artwork, concept designs, marketing visuals, social media content, portraits, landscapes, and cinematic videos with incredible detail and artistic quality. Our platform supports multiple generation modes including text-to-image, image-to-image, and AI video creation, with various aspect ratios and generation speeds to fit your creative workflow."
+      answer: "Midjourney is a powerful AI platform that allows you to create stunning, high-quality images and videos from text prompts or by transforming existing images. You can generate artwork, concept designs, marketing visuals, social media content, portraits, landscapes, and cinematic videos with incredible detail and artistic quality. Our platform supports multiple generation modes including image Editor, image-to-image, and AI video creation, with various aspect ratios and generation speeds to fit your creative workflow."
     },
     {
       question: "How do I use the AI Video Generator feature?",
