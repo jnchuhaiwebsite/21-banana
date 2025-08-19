@@ -2,10 +2,15 @@
   <div class="bg-banana-dark-bg text-banana-text-light font-['Inter']">
     <Hero />
     <About />
-    <Features />
-    <!-- <Benefits /> -->
+    <div class="bg-banana-card-bg">
+      <Features />
+    </div>
     <WhyChooseUs />
-    <Faq />
+    <!-- <Benefits /> -->
+    <div class="bg-banana-card-bg">
+      <Faq />
+    </div>
+
   </div>
 </template>
 

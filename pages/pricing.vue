@@ -1,13 +1,16 @@
 <template>
   <div class="min-h-screen bg-banana-dark-bg text-banana-text-light">
-    <main class="w-full mx-auto p-6 bg-banana-dark-bg rounded-lg max-w-7xl min-h-screen">
+    <main class="w-full mx-auto bg-banana-dark-bg rounded-lg max-w-7xl min-h-screen">
       <!-- 页面标题区域 -->
-      <header>
-        <PageHero 
-          title="Nano Banana AI Pricing"
-          subtitle="Unlock the full power of Nano Banana with a plan that scales with your ambition. No hidden fees, cancel anytime."
-        />
-      </header>
+      <section>
+        <div class="container mx-auto px-4">
+          <PageHero 
+            class="mt-20 mb-16"
+            title="Nano Banana AI Pricing"
+            subtitle="Unlock the full power of Nano Banana with a plan that scales with your ambition. No hidden fees, cancel anytime."
+          />
+        </div>
+      </section>
 
       <!-- 加载状态 -->
       <section v-if="pending" class="flex justify-center items-center py-20 w-full" aria-live="polite">
@@ -170,7 +173,7 @@ const getPlanFeatures = (plan: PricingPlan): string[] => {
 
   // 获取按钮样式
 const getButtonClass = (plan: PricingPlan): string => {
-  return "bg-banana-primary-yellow text-banana-dark-bg hover:opacity-90";
+    return "bg-banana-primary-yellow text-banana-dark-bg hover:opacity-90";
   if (plan.price === 0) {
     return "bg-banana-border-color text-banana-text-muted cursor-not-allowed";
   } else if (plan.is_popular) {

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full overflow-hidden bg-gradient-to-b from-banana-dark-bg to-gray-900">
+  <div class="relative w-full overflow-hidden ">
     <div class="container mx-auto px-4 relative z-10 pt-8">
       
       <!-- 主布局：两列网格 -->

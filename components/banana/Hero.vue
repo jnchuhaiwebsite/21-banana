@@ -1,9 +1,10 @@
 <template>
-  <section id="hero" class="py-16">
+  <section id="hero">
     <div class="container mx-auto px-4">
       <PageHero 
-        title="Nano Banana AI"
-        subtitle="The ultimate image Editor AI for limitless creation and intelligent, on-demand image editing. Your vision, rendered instantly."
+        class="mt-20 mb-16"
+        title="Nano Banana AI Image Editor | Edit Photos Instantly with Text"
+        subtitle="Experience Nano Banana, the revolutionary AI image editor. Transform your photos with simple text commands for professional-grade results. Trusted by creators & businesses."
       />
       <Generator class="mt-12" />
     </div>
