@@ -317,11 +317,12 @@
 <script setup lang="ts">
 import { ref, computed, nextTick, onMounted } from 'vue';
 import { useUserStore } from '~/stores/user';
-import { useNotificationStore } from '~/stores/notification';
 import { useUiStore } from '~/stores/ui';
 import { useRouter } from 'vue-router';
 import { editImage as editImageApi, upload } from '~/api';
+import { useNuxtApp } from 'nuxt/app';
 
+const { $toast } = useNuxtApp() as any;
 const showPromptGuide = ref(false);
 
 interface ImageResponse {
@@ -342,7 +343,6 @@ interface Preset {
 }
 
 const userStore = useUserStore();
-const notificationStore = useNotificationStore();
 const uiStore = useUiStore();
 
 const userInfo = computed(() => userStore.userInfo);
@@ -436,22 +436,14 @@ const handleImageUpload = async (event: Event) => {
   // 1. 检查图片格式
   const allowedTypes = ['image/jpeg', 'image/png']
   if (!allowedTypes.includes(file.type)) {
-    notificationStore.addNotification({
-      taskId: `format-error-${Date.now()}`,
-      status: 'error',
-      message: 'Unsupported image format. Please use JPEG or PNG.'
-    });
+    $toast.error('Unsupported image format. Please use JPEG or PNG.');
     cleanup()
     return
   }
 
   // 2. 检查图片大小
   if (file.size > 10 * 1024 * 1024) { // 10MB
-    notificationStore.addNotification({
-      taskId: `size-error-${Date.now()}`,
-      status: 'error',
-      message: 'Image size should be less than 10MB.'
-    });
+    $toast.error('Image size should be less than 10MB.');
     cleanup()
     return
   }
@@ -465,11 +457,7 @@ const handleImageUpload = async (event: Event) => {
       
       // 检查宽高长度
       if (width <= 14 || height <= 14) {
-        notificationStore.addNotification({
-          taskId: `dimension-error-${Date.now()}`,
-          status: 'error',
-          message: 'Image dimensions must be greater than 14px.'
-        });
+        $toast.error('Image dimensions must be greater than 14px.');
         cleanup()
         return
       }
@@ -477,11 +465,7 @@ const handleImageUpload = async (event: Event) => {
       // 检查宽高比
       const aspectRatio = width / height
       if (aspectRatio <= 1/3 || aspectRatio >= 3) {
-        notificationStore.addNotification({
-          taskId: `ratio-error-${Date.now()}`,
-          status: 'error',
-          message: 'Image aspect ratio must be between 1/3 and 3.'
-        });
+        $toast.error('Image aspect ratio must be between 1/3 and 3.');
         cleanup()
         return
       }
@@ -492,21 +476,13 @@ const handleImageUpload = async (event: Event) => {
       cleanup()
     }
     img.onerror = () => {
-        notificationStore.addNotification({
-          taskId: `load-error-${Date.now()}`,
-          status: 'error',
-          message: 'Failed to load image, it may be corrupted.'
-        });
+        $toast.error('Failed to load image, it may be corrupted.');
         cleanup()
     }
     img.src = e.target?.result as string
   }
   reader.onerror = () => {
-    notificationStore.addNotification({
-      taskId: `read-error-${Date.now()}`,
-      status: 'error',
-      message: 'Failed to read file.'
-    });
+    $toast.error('Failed to read file.');
     cleanup()
   }
   reader.readAsDataURL(file)
@@ -530,20 +506,12 @@ const applyPreset = (preset: Preset) => {
 
 const editImage = async () => {
   if (!imagePreview.value) {
-    notificationStore.addNotification({
-      taskId: `upload-error-${Date.now()}`,
-      status: 'error',
-      message: 'Please upload an image first'
-    });
+    $toast.error('Please upload an image first');
     return;
   }
 
   if (!prompt.value.trim()) {
-    notificationStore.addNotification({
-      taskId: `prompt-error-${Date.now()}`,
-      status: 'error',
-      message: 'Please enter edit instructions'
-    });
+    $toast.error('Please enter edit instructions');
     return;
   }
 
@@ -551,11 +519,7 @@ const editImage = async () => {
   // 检查使用限制
   const checkUsageLimit = () => {
     if (remainingTimes.value <= 0) {
-      notificationStore.addNotification({
-        taskId: `credits-warning-${Date.now()}`,
-        status: 'info',
-        message: 'Usage limit reached. Please upgrade to premium for more credits'
-      });
+      $toast.info('Usage limit reached. Please upgrade to premium for more credits');
       router.push('/pricing')
       return false
     }
@@ -607,21 +571,13 @@ const editImage = async () => {
     // 显示编辑后的图片
     previewImage.value = result.data.image_url;
     
-    notificationStore.addNotification({
-      taskId: result.data.task_id || `edit-success-${Date.now()}`,
-      status: 'success',
-      message: 'Image edited successfully!'
-    });
+    $toast.success('Image edited successfully!');
     // Deduct credit on frontend for immediate feedback, backend should be the source of truth
     if(userStore.userInfo) {
       userStore.userInfo.credits -= 1;
     }
   } catch (error: any) {
-    notificationStore.addNotification({
-      taskId: `edit-error-${Date.now()}`,
-      status: 'error',
-      message: error.message || 'Failed to edit image'
-    });
+    $toast.error(error.message || 'Failed to edit image');
     console.error('编辑图片失败:', error);
   } finally {
     loading.value = false;
@@ -656,18 +612,10 @@ async function downloadImage() {
       document.body.removeChild(link);
       window.URL.revokeObjectURL(blobUrl);
       
-      notificationStore.addNotification({
-        taskId: `download-success-${Date.now()}`,
-        status: 'success',
-        message: 'Image downloaded successfully!',
-      });
+      $toast.success('Image downloaded successfully!');
     } catch (error) {
       console.error('Download error:', error);
-      notificationStore.addNotification({
-        taskId: `download-error-${Date.now()}`,
-        status: 'error',
-        message: 'Download failed, please try again later',
-      });
+      $toast.error('Download failed, please try again later');
     } finally {
       loading.value = false;
     }
