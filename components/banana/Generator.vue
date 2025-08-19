@@ -120,7 +120,7 @@
           </div>
           
           <!-- 编辑按钮 -->
-          <button @click="editImage" :disabled="loading || !imagePreview" class="relative w-full flex items-center justify-center gap-2 px-4 mt-6 lg:px-6 py-3 sm:py-4 bg-banana-primary-yellow/80 text-banana-dark-bg hover:bg-banana-primary-yellow rounded-full font-extrabold text-base sm:text-lg lg:text-xl shadow-xl transition transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed">
+          <button @click="editImage" :disabled="loading || !mainPreview" class="relative w-full flex items-center justify-center gap-2 px-4 mt-6 lg:px-6 py-3 sm:py-4 bg-banana-primary-yellow/80 text-banana-dark-bg hover:bg-banana-primary-yellow rounded-full font-extrabold text-base sm:text-lg lg:text-xl shadow-xl transition transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed">
             <svg v-if="loading" class="animate-spin -ml-1 mr-3 h-5 w-5 text-banana-dark-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -136,14 +136,14 @@
           <!-- 固定高度的图片容器 -->
           <div class="w-full h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center bg-banana-dark-bg/50 rounded-2xl">
                          <!-- 原始图片 -->
-            <img v-if="imagePreview && !previewImage" :src="imagePreview" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" />
+            <img v-if="mainPreview && !previewImage" :src="mainPreview" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" />
                          <!-- 编辑后的图片 -->
             <img v-else-if="previewImage" :src="previewImage" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" />
 
           </div>
 
           <!-- Demo Text -->
-          <div v-if="!imagePreview && !previewImage" class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/60 text-white text-base px-5 py-2.5 rounded-full pointer-events-none shadow-lg">
+          <div v-if="!mainPreview && !previewImage" class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/60 text-white text-base px-5 py-2.5 rounded-full pointer-events-none shadow-lg">
             Nano Banana Generation Demo
           </div>
 
@@ -340,6 +340,7 @@ const prompt = ref('');
 const promptInput = ref<HTMLTextAreaElement | null>(null);
 const selectedImage = ref<File | null>(null);
 const imagePreview = ref<string>('');
+const mainPreview = ref<string>('https://resp.elevenMusicPro.com/nano/images/nano-banana-ai-demo.webp');
 const fileInput = ref<HTMLInputElement | null>(null);
 
 const qualityLevel = ref(3);
@@ -463,6 +464,7 @@ const handleImageUpload = async (event: Event) => {
       // 所有检查通过
       selectedImage.value = file
       imagePreview.value = URL.createObjectURL(file)
+      mainPreview.value = imagePreview.value
       cleanup()
     }
     img.onerror = () => {
@@ -496,6 +498,8 @@ const removeSelectedImage = () => {
   }
   selectedImage.value = null
   imagePreview.value = ''
+  mainPreview.value = 'https://resp.elevenMusicPro.com/nano/images/nano-banana-ai-demo.webp';
+  previewImage.value = '';
 }
 
 const applyPreset = (preset: Preset) => {
@@ -503,7 +507,7 @@ const applyPreset = (preset: Preset) => {
 };
 
 const editImage = async () => {
-  if (!imagePreview.value) {
+  if (!mainPreview.value) {
     notificationStore.addNotification({
       taskId: `upload-error-${Date.now()}`,
       status: 'error',
@@ -544,10 +548,10 @@ const editImage = async () => {
   try {
     let imageUrl = '';
     
-    // 如果是使用模板图片（selectedImage为null但imagePreview有值）
-    if (!selectedImage.value && imagePreview.value) {
+    // 如果是使用模板图片（selectedImage为null）
+    if (!selectedImage.value) {
       // 直接使用模板URL
-      imageUrl = imagePreview.value;
+      imageUrl = mainPreview.value;
     } 
     // 如果是用户上传的图片
     else if (selectedImage.value) {
