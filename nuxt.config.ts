@@ -34,22 +34,22 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'The Premier Midjourney Video Generator - Transform static images into breathtaking video clips with unparalleled ease and cinematic motion.'
+          content: 'Discover Nano Banana AI for fast, seamless image creation and editing. Simple to use, versatile styles, and perfect for creators, designers, and businesses.'
         },
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'The Midjourney Video Generator - Transform Images to Videos' },
-        { property: 'og:description', content: 'From static art to cinematic motion. Experience the premier midjourney video generator, built to transform your images into breathtaking video clips.' },
+        { property: 'og:title', content: 'Nano Banana AI Image Generator | Edit & Create Instantly' },
+        { property: 'og:description', content: 'Discover Nano Banana AI for fast, seamless image creation and editing. Simple to use, versatile styles, and perfect for creators, designers, and businesses.' },
         { property: 'og:image', content: '/favicon.ico' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'The Midjourney Video Generator - Image to Video AI' },
-        { name: 'twitter:description', content: 'Transform your static images into stunning video clips with our premier midjourney video generator. From art to cinematic motion in seconds.' },
+        { name: 'twitter:title', content: 'Nano Banana AI Image Generator | Edit & Create Instantly' },
+        { name: 'twitter:description', content: 'Discover Nano Banana AI for fast, seamless image creation and editing. Simple to use, versatile styles, and perfect for creators, designers, and businesses.' },
         { name: 'twitter:image', content: '/favicon.ico' },
         // Keywords
-        { name: 'keywords', content: 'midjourney video generator, image to video, AI video creation, static to motion, cinematic video, AI animation' },
-        { name: 'author', content: 'Midjourney Video Generator Team' },
-        { name: 'application-name', content: 'Midjourney Video Generator' },
+        { name: 'keywords', content: 'AI image generator, AI image editing, fast image creation, versatile AI styles, creator tools, designer tools' },
+        { name: 'author', content: 'Nano Banana Team' },
+        { name: 'application-name', content: 'Nano Banana AI Image Generator' },
       ],
       script: [
         { src: '/js/c6h.js', async: true } 
