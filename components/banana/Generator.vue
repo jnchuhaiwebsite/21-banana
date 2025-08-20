@@ -136,9 +136,9 @@
           <!-- 固定高度的图片容器 -->
           <div class="w-full border-2 border-dashed border-banana-primary-yellow/60 h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center bg-banana-dark-bg/50 rounded-2xl">
                          <!-- 原始图片 -->
-            <img v-if="mainPreview && !previewImage" :src="mainPreview" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" />
+            <img v-if="mainPreview && !previewImage" :src="mainPreview" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" alt="Nano Bananan Original Image"/>
                          <!-- 编辑后的图片 -->
-            <img v-else-if="previewImage" :src="previewImage" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" />
+            <img v-else-if="previewImage" :src="previewImage" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" alt="Nano Banana Edited Image"/>
 
           </div>
 
