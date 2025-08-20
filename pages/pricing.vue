@@ -100,6 +100,40 @@
           </section>
         </article>
       </section>
+
+      <!-- How Credits Work Section -->
+      <section class="mt-20 py-12 bg-banana-card-bg rounded-xl border border-banana-border-color shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-banana-text-light sm:text-4xl">How Do Credits Work?</h2>
+            <p class="mt-4 text-lg text-banana-text-muted">
+              Credits are the universal currency for creating in Nano Banana AI. Use them for various actions like generating images or accessing advanced features. Your credit balance is deducted based on your usage.
+            </p>
+            <div class="mt-6 inline-block bg-banana-dark-bg px-4 py-2 rounded-lg border border-banana-border-color">
+              <p class="text-base font-medium text-banana-primary-yellow">Example: 1 Standard Image Generation = 1 Credit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="mt-16 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-banana-text-light sm:text-4xl">Frequently Asked Questions</h2>
+          </div>
+          <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
+            <div v-for="(faq, index) in faqs" :key="index" class="bg-banana-card-bg rounded-lg p-6 border border-banana-border-color transition-all duration-300 hover:border-banana-primary-yellow">
+              <h3 class="font-semibold text-lg text-banana-text-light flex items-start">
+                <span class="text-banana-primary-yellow font-bold mr-3">{{ String(index + 1).padStart(2, '0') }}</span>
+                <span>{{ faq.question }}</span>
+              </h3>
+              <p class="mt-4 text-banana-text-muted pl-8">{{ faq.answer }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </main>
   </div>
 </template>
@@ -111,6 +145,34 @@ import { useClerkAuth } from '~/utils/authHelper';
 import { useSeo } from '~/composables/useSeo';
 import { useAsyncData } from 'nuxt/app';
 import PageHero from '~/components/PageHero.vue';
+
+// FAQ data
+const faqs = ref([
+  {
+    question: 'Is this a one-time payment? Are there any other fees?',
+    answer: 'Absolutely. This is a one-time payment for the credits themselves. There are no subscription fees, monthly charges, or any hidden costs involved.'
+  },
+  {
+    question: 'Do the purchased credits expire?',
+    answer: 'No, they don\'t. All credits you purchase are valid forever. You can use them whenever you like, with no time restrictions.'
+  },
+  {
+    question: 'How are credits consumed?',
+    answer: 'A standard image generation consumes one credit. We may introduce more advanced features in the future, like ultra-high-resolution upscaling, which might have different credit costs. The cost of any action will be clearly displayed before you confirm it.'
+  },
+  {
+    question: 'What if I run out of credits?',
+    answer: 'You can always return to this page to purchase more credit packages. You can buy any package as many times as you need, and the credits will be added to your existing balance.'
+  },
+  {
+    question: 'Where can I check my remaining credits?',
+    answer: 'Once you\'re logged in, your remaining credit balance will always be prominently displayed on your personal account dashboard or within the creation interface.'
+  },
+  {
+    question: 'What payment methods are supported?',
+    answer: 'We use Stripe as our payment processing partner. Through Stripe, we securely accept all major credit cards, such as Visa, MasterCard, and American Express. Your payment information is handled directly by Stripe, and we do not store any sensitive card details.'
+  }
+]);
 
 // 定义套餐数据类型
 interface PricingPlan {
