@@ -132,9 +132,9 @@
         </div>
 
         <!-- 右列：预览 -->
-        <div class="w-full mx-auto md:mx-0 md:w-[55%] max-w-[720px] bg-banana-card-bg/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-banana-border-color/50 p-4 relative overflow-hidden flex flex-col justify-center">
+        <div class="w-full  mx-auto md:mx-0 md:w-[55%] max-w-[720px] bg-banana-card-bg/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-banana-border-color/50 p-4 relative overflow-hidden flex flex-col justify-center">
           <!-- 固定高度的图片容器 -->
-          <div class="w-full h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center bg-banana-dark-bg/50 rounded-2xl">
+          <div class="w-full border-2 border-dashed border-banana-border-color h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center bg-banana-dark-bg/50 rounded-2xl">
                          <!-- 原始图片 -->
             <img v-if="mainPreview && !previewImage" :src="mainPreview" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" />
                          <!-- 编辑后的图片 -->
