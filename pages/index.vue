@@ -1,6 +1,8 @@
 <template>
   <div class="bg-banana-dark-bg text-banana-text-light font-['Inter']">
-    <Hero />
+    <div id="hero">
+      <Hero />
+    </div>
     <About />
     <div class="bg-banana-card-bg">
       <Features />

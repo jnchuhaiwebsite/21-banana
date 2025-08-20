@@ -15,7 +15,7 @@ export interface RouteItem {
 
 // 主路由配置
 export const mainRoutes: RouteItem[] = [
-  { id: "hero", name: "Home" },
+  { id: "hero", name: "Home", href: "/"},
   { id: "about", name: "About" },
   { id: "features", name: "Features" },
   { id: "why-choose-us", name: "Why Us" },
