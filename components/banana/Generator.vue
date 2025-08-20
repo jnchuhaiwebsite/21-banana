@@ -11,7 +11,7 @@
           <!-- 图片上传 -->
           <div>
             <label for="image-upload" class="block text-lg font-semibold text-banana-text-light mb-2">Upload Image (Required)</label>
-            <div class="w-full h-[150px] border-2 border-dashed border-banana-border-color rounded-xl p-4 hover:border-banana-primary-yellow transition-colors relative bg-banana-dark-bg">
+            <div class="w-full h-[150px] border-2 border-dashed border-banana-primary-yellow/60 rounded-xl p-4 hover:border-banana-primary-yellow transition-colors relative bg-banana-dark-bg">
               <input 
                 type="file" 
                 accept="image/jpeg,image/png" 
@@ -69,7 +69,7 @@
               v-model="prompt"
               id="prompt"
               ref="promptInput"
-              class="w-full h-32 rounded-xl bg-gradient-to-b from-banana-dark-bg to-gray-900 border border-banana-border-color text-banana-text-light px-4 py-3 focus:ring-2 focus:ring-banana-primary-yellow focus:border-transparent transition placeholder-banana-text-muted/50 text-base resize-none"
+              class="w-full border-2 border-dashed border-banana-primary-yellow/60 h-32 rounded-xl bg-gradient-to-b from-banana-dark-bg to-gray-900 border border-banana-border-color text-banana-text-light px-4 py-3 focus:ring-2 focus:ring-banana-primary-yellow focus:border-transparent transition placeholder-banana-text-muted/50 text-base resize-none"
               placeholder="Please provide a prompt describing the video you want to generate. Both Chinese and English are supported."
               @focus="withLoginCheck()"
             ></textarea>
@@ -82,7 +82,7 @@
                 Quality Level
                 <div class="group relative">
                   <span class="h-5 w-5 inline-flex items-center justify-center rounded-full bg-banana-border-color text-banana-primary-yellow text-xs font-bold cursor-help">?</span>
-                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gradient-to-b from-banana-dark-bg to-gray-900 text-banana-text-light text-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 w-[300px] text-left break-normal">
+                  <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gradient-to-b from-banana-dark-bg to-gray-900 text-banana-text-light text-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 w-[300px] text-left break-normal ">
                     Higher quality levels produce better results but may take longer to process and cost more credits.
                   </div>
                 </div>
@@ -134,7 +134,7 @@
         <!-- 右列：预览 -->
         <div class="w-full  mx-auto md:mx-0 md:w-[55%] max-w-[720px] bg-banana-card-bg/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-banana-border-color/50 p-4 relative overflow-hidden flex flex-col justify-center">
           <!-- 固定高度的图片容器 -->
-          <div class="w-full border-2 border-dashed border-banana-border-color h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center bg-banana-dark-bg/50 rounded-2xl">
+          <div class="w-full border-2 border-dashed border-banana-primary-yellow/60 h-[500px] md:h-[550px] lg:h-[600px] flex items-center justify-center bg-banana-dark-bg/50 rounded-2xl">
                          <!-- 原始图片 -->
             <img v-if="mainPreview && !previewImage" :src="mainPreview" class="max-w-full max-h-full object-contain rounded-lg transition-opacity duration-300" :class="{'opacity-50': loading}" />
                          <!-- 编辑后的图片 -->

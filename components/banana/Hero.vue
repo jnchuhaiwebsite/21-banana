@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4">
       <PageHero 
         class="mt-20 mb-16"
-        title="Nano Banana AI Image Editor | Edit Photos Instantly with Text"
+        title="Nano Banana AI Image Editor "
         subtitle="Experience Nano Banana, the revolutionary AI image editor. Transform your photos with simple text commands for professional-grade results. Trusted by creators & businesses."
       />
       <Generator class="mt-12" />
