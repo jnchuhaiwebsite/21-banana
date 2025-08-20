@@ -143,7 +143,7 @@
           </div>
 
           <!-- Demo Text -->
-          <div v-if="!mainPreview && !previewImage" class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/60 text-white text-base px-5 py-2.5 rounded-full pointer-events-none shadow-lg">
+          <div v-if="!previewImage" class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/60 text-white text-base px-5 py-2.5 rounded-full pointer-events-none shadow-lg">
             Nano Banana Generation Demo
           </div>
 
