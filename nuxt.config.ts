@@ -47,7 +47,7 @@ export default defineNuxtConfig({
         { name: 'twitter:description', content: 'Discover Nano Banana AI for fast, seamless image creation and editing. Simple to use, versatile styles, and perfect for creators, designers, and businesses.' },
         { name: 'twitter:image', content: '/favicon.ico' },
         // Keywords
-        { name: 'keywords', content: '' },
+        { name: 'keywords', content: 'Nano Banana,Nano Banana AI,Nano Banana image generator,Nano Banana image editing,Nano Banana New model' },
         { name: 'author', content: 'Nano Banana Team' },
         { name: 'application-name', content: 'Nano Banana AI Image Generator' },
       ],
