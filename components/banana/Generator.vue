@@ -589,13 +589,6 @@ const applyPreset = (preset: Preset) => {
 };
 
 const editImage = async () => {
-  alert(await checkLoginStatus())
-  if (!await checkLoginStatus()) {
-    alert(1)
-    showUploadGuide.value = true;
-    return;
-  }
-
   if (selectedImages.value.length === 0) {
     $toast.error('Please upload an image first');
     return;
