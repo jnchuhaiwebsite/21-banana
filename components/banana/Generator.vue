@@ -16,7 +16,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.546-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Upload Guide
+                Use hints
               </button>
             </label>
             <div class="w-full min-h-[150px] border-2 border-dashed border-banana-primary-yellow/60 rounded-xl p-4 hover:border-banana-primary-yellow transition-colors relative bg-banana-dark-bg">
@@ -294,7 +294,7 @@
     <div v-if="showUploadGuide" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
       <div class="bg-banana-dark-bg rounded-2xl shadow-xl w-full max-w-2xl border border-banana-border-color/50 overflow-hidden">
         <div class="p-6 border-b border-banana-border-color/50 flex justify-between items-center">
-          <h3 class="text-2xl font-bold text-white">Upload Guide</h3>
+          <h3 class="text-2xl font-bold text-white">Use hints</h3>
           <button @click="showUploadGuide = false" class="text-banana-text-muted hover:text-white">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
