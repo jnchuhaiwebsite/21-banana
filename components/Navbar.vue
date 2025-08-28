@@ -15,25 +15,12 @@
           <!-- PC端导航 -->
           <div class="hidden lg:flex items-center flex-grow space-x-4 ml-6">
             <template v-for="(section, index) in sections" :key="index">
-              <div
-                @click="handleNavClick(section.href || section.id)"
-                class="relative text-banana-text-light hover:text-banana-primary-yellow transition-all cursor-pointer px-4 py-2.5 rounded-lg hover:shadow-lg whitespace-nowrap"
+              <NuxtLink
+                :to="section.href || `/#${section.id}`"
+                class="relative text-banana-text-light hover:text-banana-primary-yellow transition-all cursor-pointer px-4 py-2.5 rounded-lg hover:shadow-lg whitespace-nowrap" 
               >
-                <span
-                  v-if="section.badge"
-                  :class="[
-                    'absolute text-[10px] leading-none bg-banana-secondary-blue text-white rounded-full px-2 py-1 min-w-fit inline-flex items-center justify-center whitespace-nowrap',
-                    {
-                      '-top-2 left-1/2 -translate-x-1/2': section.badgePosition === 'center',
-                      '-top-2 -left-1': section.badgePosition === 'left',
-                      '-top-2 -right-1': section.badgePosition === 'right',
-                    }
-                  ]"
-                >
-                  {{ section.badge }}
-                </span>
                 {{ section.name }}
-              </div>
+              </NuxtLink>
             </template>
           </div>
 
@@ -132,25 +119,13 @@
             <!-- 导航链接 -->
             <div class="space-y-2 mb-6">
               <template v-for="(section, index) in sections" :key="index">
-                <div
-                  @click="() => { handleNavClick(section.href || section.id); isOpen = false; }"
+                <NuxtLink
+                  :to="section.href || `/#${section.id}`"
+                  @click="isOpen = false"
                   class="relative block text-banana-text-light hover:text-banana-primary-yellow text-base transition-all cursor-pointer px-4 py-2.5 rounded-lg hover:bg-banana-card-bg hover:shadow-lg whitespace-nowrap mt-3"
                 >
-                  <span
-                    v-if="section.badge"
-                    :class="[
-                      'absolute text-[10px] leading-none bg-banana-secondary-blue text-white rounded-full px-2 py-1 min-w-fit inline-flex items-center justify-center whitespace-nowrap',
-                      {
-                        '-top-2 left-1/2 -translate-x-1/2': section.badgePosition === 'center',
-                        '-top-2 -left-1': section.badgePosition === 'left',
-                        '-top-2 -right-1': section.badgePosition === 'right',
-                      }
-                    ]"
-                  >
-                    {{ section.badge }}
-                  </span>
                   {{ section.name }}
-                </div>
+                </NuxtLink>
               </template>
               <!-- <NuxtLink
                 v-if="isSignedIn"
