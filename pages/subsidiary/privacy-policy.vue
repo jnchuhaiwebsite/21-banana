@@ -11,7 +11,7 @@
       </div>
       
       <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-8 text-banana-text-light">Privacy Policy</h1>
-      <p class="text-banana-text-muted mb-8 text-lg">Effective Date: {{ new Date().toLocaleDateString() }}</p>
+      <p class="text-banana-text-muted mb-8 text-lg">Effective Date: August 19,2025</p>
       
       <div class="space-y-8 text-banana-text-muted leading-relaxed">
         <section>
@@ -92,7 +92,7 @@
         </section>
 
         <section class="mt-12">
-          <p class="text-sm">Last updated: {{ new Date().toLocaleDateString() }}</p>
+          <p class="text-sm">Last updated: August 19,2025</p>
         </section>
       </div>
     </div>

@@ -23,7 +23,7 @@ import Faq from '~/components/banana/Faq.vue';
 import { useSeo } from '~/composables/useSeo';
 
 useSeo({
-  title: 'Nano Banana AI Image Generator | Edit & Create Images',
+  title: 'Nano Banana AI | Image-to-Image Editing with Gemini 2.5',
   description: 'Discover Nano Banana AI for fast, seamless image creation and editing. Simple to use, versatile styles, and perfect for creators, designers, and businesses.'
 })
 </script>
