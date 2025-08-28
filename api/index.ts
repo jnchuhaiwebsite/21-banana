@@ -34,7 +34,7 @@ export const urlList = {
   createTasksText: baseUrl + '/api/task/mj/create',  // 创建任务-文生图
   createTasks: baseUrl + '/api/task/mj/create',  // 创建任务
 
-  editImage: baseUrl + '/api/task/nano/editimg', // 编辑图片
+  editImage: baseUrl + '/api/task/nano-banana/editimg', // 编辑图片
 }
 
 /**
@@ -44,6 +44,7 @@ export const urlList = {
  */
 export const setUserInfo = async (data: any) => {
   try {
+    // alert(2222322)
     // 如果已有有效Token，直接返回缓存的用户信息
     const token = getValidToken();
     if (token) {

@@ -64,9 +64,9 @@
             <div class="bg-gradient-to-br from-banana-dark-bg to-gray-900 rounded-xl p-6 border border-banana-border-color shadow-sm">
               <div class="inline-flex items-baseline gap-2">
                 <span class="text-4xl font-bold text-banana-primary-yellow">${{ plan.price }}</span>
-                <span v-if="plan.price === 9.9" class="text-xl text-banana-primary-yellow/50 line-through">$12</span>
-                <span v-if="plan.price === 29.9" class="text-xl text-banana-primary-yellow/50 line-through">$33</span>
-                <span v-if="plan.price === 69.9" class="text-xl text-banana-primary-yellow/50 line-through">$74</span>
+                <span v-if="plan.price === 10" class="text-xl text-banana-primary-yellow/50 line-through">$12</span>
+                <span v-if="plan.price === 30" class="text-xl text-banana-primary-yellow/50 line-through">$33</span>
+                <span v-if="plan.price === 99" class="text-xl text-banana-primary-yellow/50 line-through">$129</span>
                 <span class="text-sm text-banana-text-muted font-medium bg-banana-card-bg px-3 py-1 rounded-full shadow-sm">one-time</span>
               </div>
             </div>
