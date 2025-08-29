@@ -21,10 +21,44 @@ import Features from '~/components/banana/Features.vue';
 import WhyChooseUs from '~/components/banana/WhyChooseUs.vue';
 import Faq from '~/components/banana/Faq.vue';
 import { useSeo } from '~/composables/useSeo';
+import { onMounted } from 'vue';
 
 useSeo({
   title: 'Nano Banana AI | Image-to-Image Editing with Gemini 2.5',
   description: 'Discover Nano Banana AI for fast, seamless image creation and editing. Simple to use, versatile styles, and perfect for creators, designers, and businesses.'
+})
+
+onMounted(() => {
+  const scrollToAnchor = () => {
+    if (window.location.hash) {
+      const sectionId = window.location.hash.substring(1);
+      
+      let attempts = 0;
+      const maxAttempts = 30; // 增加尝试次数以应对慢网络
+      
+      const interval = setInterval(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          clearInterval(interval);
+          const offset = 80; // 导航栏高度
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        } else {
+          attempts++;
+          if (attempts > maxAttempts) {
+            clearInterval(interval);
+            console.warn(`无法找到ID为 '${sectionId}' 的元素`);
+          }
+        }
+      }, 100);
+    }
+  };
+
+  scrollToAnchor();
 })
  
 </script>
