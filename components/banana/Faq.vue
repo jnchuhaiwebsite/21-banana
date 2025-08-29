@@ -6,7 +6,7 @@
           Frequently Asked Questions
         </h2>
         <p class="text-lg text-banana-text-muted max-w-3xl mx-auto">
-          Answers to common questions about our platform, features, and pricing.
+          Answers to common questions about our Nano Banana platform, features, and pricing.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
@@ -27,35 +27,35 @@ import { ref } from 'vue';
 const faqItems = ref([
   {
     question: 'What makes Nano Banana AI different from other image editing tools?',
-    answer: 'Nano Banana AI stands out with its exceptional text-based image editing capabilities and superior understanding of complex prompts. Unlike other AI editors, it excels at both creating new images and modifying existing ones through natural language commands.',
+    answer: 'Nano Banana AI stands out with its exceptional text-based image editing capabilities and superior understanding of complex prompts. Unlike other AI editors, Nano Banana excels at both creating new images and modifying existing ones with natural language commands, all powered by Nano technology.',
   },
   {
     question: 'Can I use Nano Banana AI for commercial projects?',
-    answer: 'Yes. Images edited with Nano Banana AI can be used for commercial purposes, including marketing materials, website content, and product designs. Please review our Terms of Service for specific usage guidelines.',
+    answer: 'Yes. Images edited with Nano Banana AI can be used for commercial purposes, including marketing materials, website content, and product designs. Nano technology ensures high-quality outputs. Please review our Terms of Service for specific usage guidelines.',
   },
   {
-    question: 'What are the requirements for uploading images?',
-    answer: 'Formats: JPEG, PNG\nAspect Ratio (width/height): Within the range (1/3, 3)\nDimensions (px): Both width and height must be greater than 14 px\nFile Size: Up to 10 MB',
+    question: 'What are the requirements for uploading images to Nano Banana AI?',
+    answer: 'Formats: JPEG, PNG\nAspect Ratio (width/height): Within the range (1/3, 3)\nDimensions (px): Both width and height must be greater than 14 px\nFile Size: Up to 10 MB for Nano Banana AI.',
   },
   {
-    question: 'How accurate is the image editing feature?',
-    answer: 'Our text-based image editing is highly accurate, enabling precise modifications to existing images with simple natural language instructions. The AI understands context and applies changes while preserving image quality and consistency.',
+    question: 'How accurate is the Nano Banana AI image editing feature?',
+    answer: 'Our text-based image editing with Nano Banana AI is highly accurate, enabling precise modifications to existing images with simple natural language instructions. The Nano AI understands context and applies changes while preserving image quality and consistency.',
   },
   {
-    question: 'Is there a limit to how many edits I can perform?',
-    answer: 'Limits depend on your subscription plan. We offer flexible pricing tiers to suit individuals, teams, and enterprise-level needs.',
+    question: 'Is there a limit to how many edits I can perform with Nano Banana AI?',
+    answer: 'Limits on Nano Banana AI depend on your subscription plan. We offer flexible pricing tiers to suit individuals, teams, and enterprise-level needs for Nano.',
   },
   {
-    question: 'How long does it take to complete an edit?',
-    answer: 'Most edits are completed within 15–30 seconds, depending on image complexity and server load. Our optimized processing ensures fast turnaround without sacrificing quality.',
+    question: 'How long does it take for Nano Banana AI to complete an edit?',
+    answer: 'Most edits with Nano Banana AI are completed within 15–30 seconds, depending on image complexity and server load. Our optimized Nano processing ensures fast turnaround without sacrificing quality.',
   },
   {
     question: 'What kind of prompts work best with Nano Banana AI?',
-    answer: 'Detailed, descriptive prompts deliver the best results. Include details such as style, composition, lighting, colors, and specific elements you want. The AI works well with both creative and technical instructions.',
+    answer: 'Detailed, descriptive prompts deliver the best results with Nano Banana AI. Include details such as style, composition, lighting, colors, and specific elements you want. The Nano AI works well with both creative and technical instructions.',
   },
   {
     question: 'Is my data secure when using Nano Banana AI?',
-    answer: 'We prioritize user privacy and data security. All edited images and prompts are processed securely, with private processing options available for sensitive commercial projects.',
+    answer: 'We prioritize user privacy and data security. All edited images and prompts for Nano Banana AI are processed securely, with private Nano processing options available for sensitive commercial projects.',
   },
 ]);
 </script>

@@ -5,7 +5,7 @@
         class="mt-20 mb-16"
         title="Nano Banana AI Image Editor "
         subtitle2="Edit Photos Instantly with Text"
-        subtitle="Experience Nano Banana, the revolutionary AI image editor. Transform your photos with simple text commands for professional-grade results. Trusted by creators & businesses."
+        subtitle="Experience Nano Banana AI, the revolutionary AI image editor powered by Nano technology. Transform your photos with simple text commands for professional-grade results with Nano Banana AI. Trusted by creators & businesses."
       />
       <Generator class="mt-12" />
     </div>
