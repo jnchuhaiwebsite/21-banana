@@ -12,7 +12,7 @@
           What Is Nano Banana AI?
         </h2>
         <p class="text-lg text-banana-text-muted max-w-3xl mx-auto">
-          Discover Nano Banana, the state-of-the-art AI that transforms your text into
+          Discover Nano Banana AI Image Generation, the state-of-the-art AI that transforms your text into
           breathtaking visuals. Nano Banana AI intelligently edits images with simple
           commands.
         </p>

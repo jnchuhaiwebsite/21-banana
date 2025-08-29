@@ -4,7 +4,7 @@
       <div class="section-header text-center mb-16">
         <h2 class="font-['Poppins'] text-4xl md:text-5xl font-bold mb-4">Nano Banana AI - Core Advantages</h2>
         <p class="text-lg text-banana-text-muted max-w-3xl mx-auto">
-          Explore the powerful toolkit of Nano Banana, designed to bring any vision to life with
+          Explore the powerful toolkit of Nano Banana AI Image Generation, designed to bring any vision to life with
           unprecedented speed and precision, powered by Nano technology.
         </p>
       </div>
@@ -62,7 +62,7 @@ const features = ref([
   },
   {
     title: 'Cost-Effective Solution',
-    description: 'With Nano Banana, cut down on expenses for stock photography and professional design services while still maintaining high-quality visual content for your projects.',
+    description: 'With Nano Banana AI Image Generation, cut down on expenses for stock photography and professional design services while still maintaining high-quality visual content for your projects.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1m0-1V4m0 2.01M12 18v-1m0-1v.01M12 16v-1m0 1V14m0-6a2 2 0 100-4 2 2 0 000 4zm0 12a2 2 0 100-4 2 2 0 000 4z"></path>'
   },
   {
@@ -72,7 +72,7 @@ const features = ref([
   },
   {
     title: 'Creative Freedom',
-    description: 'Break free from the limitations of stock photos and bring any concept to life, no matter how unique or specific your vision.',
+    description: 'Use Nano Banana AI Image Generation Break free from the limitations of stock photos and bring any concept to life, no matter how unique or specific your vision.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>'
   },
   {
@@ -82,7 +82,7 @@ const features = ref([
   },
   {
     title: 'Nano Style & Optimization',
-    description: 'Easily apply different styles and intelligent enhancements to your images with Nano, ensuring they adapt to various scenarios and creative needs with ease.',
+    description: 'Nano Banana AI Image Generation Easily apply different styles and intelligent enhancements to your images with Nano, ensuring they adapt to various scenarios and creative needs with ease.',
     icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>'
   }
 ]);
