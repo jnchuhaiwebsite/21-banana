@@ -34,15 +34,15 @@ const faqItems = ref([
     answer: 'Yes. Images edited with Nano Banana AI can be used for commercial purposes, including marketing materials, website content, and product designs. Nano technology ensures high-quality outputs. Please review our Terms of Service for specific usage guidelines.',
   },
   {
-    question: 'What are the requirements for uploading images to Nano Banana?',
+    question: 'What are the requirements for uploading images to Nano Banana AI?',
     answer: 'Formats: JPEG, PNG\nAspect Ratio (width/height): Within the range (1/3, 3)\nDimensions (px): Both width and height must be greater than 14 px\nFile Size: Up to 10 MB for Nano Banana AI.',
   },
   {
-    question: 'How accurate is the Nano Banana image editing feature?',
+    question: 'How accurate is the Nano Banana AI image editing feature?',
     answer: 'Our text-based image editing with Nano Banana AI is highly accurate, enabling precise modifications to existing images with simple natural language instructions. The Nano AI understands context and applies changes while preserving image quality and consistency.',
   },
   {
-    question: 'Is there a limit to how many edits I can perform with Nano?',
+    question: 'Is there a limit to how many edits I can perform with Nano Banana AI?',
     answer: 'Limits on Nano Banana AI depend on your subscription plan. We offer flexible pricing tiers to suit individuals, teams, and enterprise-level needs for Nano.',
   },
   {
