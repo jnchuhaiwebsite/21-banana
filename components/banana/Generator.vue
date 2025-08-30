@@ -312,7 +312,7 @@
               </div>
               <div>
                 <h4 class="font-bold text-white text-lg">Language Performance</h4>
-                <p class="text-banana-text-muted">For the best performance, please use English, Spanish, Japanese, Chinese, or Hindi.</p>
+                <p class="text-banana-text-muted">Nano Banana AI supports English, Spanish, Japanese, Chinese, and Hindi. For the best performance, please use English.</p>
               </div>
             </div>
 
