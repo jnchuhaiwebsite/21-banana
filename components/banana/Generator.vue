@@ -685,7 +685,7 @@ async function downloadImage() {
       const link = document.createElement('a');
       link.href = blobUrl;
       // 设置文件名
-      const fileName = 'seedream-ai-image.png';
+      const fileName = 'nano-banana.png';
       link.download = fileName;
       
       // 触发下载
