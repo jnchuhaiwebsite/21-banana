@@ -4,7 +4,7 @@
       <div class="section-header text-center mb-16">
         <h2 class="font-['Poppins'] text-4xl md:text-5xl font-bold mb-4">Nano Banana AI - Core Advantages</h2>
         <p class="text-lg text-banana-text-muted max-w-3xl mx-auto">
-          English: Nano Banana AI Image Generation turns imagination into reality with lightning speed and pixel-perfect precision.
+          Nano Banana AI Image Generation turns imagination into reality with lightning speed and pixel-perfect precision.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
