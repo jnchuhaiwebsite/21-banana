@@ -52,8 +52,20 @@ export default defineNuxtConfig({
         { name: 'application-name', content: 'Nano Banana AI Image Generator' },
       ],
       script: [
-        { src: '/js/c6h.js', async: true } 
-      ], // 外部脚本
+        { src: '/js/c6h.js', async: true }, 
+        { 
+          src: 'https://www.googletagmanager.com/gtag/js?id=AW-16509524487', 
+          async: true 
+        },
+        {
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16509524487');
+          `
+        }, // 外部脚本
+      ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'canonical', href: 'https://www.nano-banana-ai.net' }
