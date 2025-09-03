@@ -96,8 +96,33 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { getSubPlans,getSubplansTest } from '~/api/index'
+import { useRoute } from 'vue-router'
+import { useHead } from 'nuxt/app'
+const route = useRoute()
+if (route.query.paysuccess == '1') {
+  // const response = await getCurrentUser() as any;
+  // if (response.data && response.data.email) {
+  //   email.value = response.data.email;
+  // }
+  // gtag('set', 'user_data', { 'email': '${email.value}' });
+  // 添加转化跟踪代码到页面 head
+  useHead({
 
+    script: [
+      {
+        innerHTML: `
+          gtag('event', 'conversion', {
+              'send_to': 'AW-16509524487/ZJ6oCOWMqJMbEIe0rcA9',
+              'value': 1.0,
+              'currency': 'USD',
+              'transaction_id': ''
+          });
+        `
+      }
+    ]
+  })
 
+}
 // Plan information
 const planInfo = ref<any>(null)
 const paymentStatus = ref<'success' | 'failed' | null>(null)
