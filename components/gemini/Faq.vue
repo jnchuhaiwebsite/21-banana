@@ -31,7 +31,7 @@ const faq = {
   <div class="py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-4xl">
-        <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-center mb-6 bg-gradient-to-r from-banana-primary-yellow to-banana-secondary-blue text-transparent bg-clip-text">
+        <h2 class="text-4xl font-extrabold tracking-tight text-center mb-6 bg-gradient-to-r from-banana-primary-yellow to-banana-secondary-blue text-transparent bg-clip-text" style="line-height: 1.4;">
           {{ faq.title }}
         </h2>
         <p class="text-lg leading-7 text-banana-text-muted text-center mb-16 max-w-2xl mx-auto">

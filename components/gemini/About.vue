@@ -10,10 +10,10 @@ const about = {
   <div class="py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
-        <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-banana-primary-yellow to-banana-secondary-blue text-transparent bg-clip-text">
+        <h2 class="text-4xl font-extrabold tracking-tight text-center mb-6 bg-gradient-to-r from-banana-primary-yellow to-banana-secondary-blue text-transparent bg-clip-text" style="line-height: 1.4;">
           {{ about.title }}
         </h2>
-        <p class="mt-6 text-lg leading-7 text-banana-text-muted max-w-2xl mx-auto">
+        <p class="text-lg leading-7 text-banana-text-muted text-center mb-16 max-w-2xl mx-auto">
           {{ about.description }}
         </p>
         <p class="mt-8 text-xl leading-8 text-banana-text-muted max-w-3xl mx-auto">
