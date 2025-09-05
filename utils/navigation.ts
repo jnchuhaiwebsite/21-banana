@@ -16,6 +16,7 @@ export interface RouteItem {
 // 主路由配置
 export const mainRoutes: RouteItem[] = [
   { id: "hero", name: "Home", href: "/"},
+  { id: "hero-preview", name: "Gemini 2.5 Flash Image", href: "/gemini-2.5-flash-image"},
   { id: "about", name: "About" },
   { id: "features", name: "Features" },
   { id: "why-choose-us", name: "Why Us" },
