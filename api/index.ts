@@ -13,7 +13,7 @@ const baseUrl = process.env.NODE_ENV === 'development'
 // console.log('当前baseUrl:', baseUrl);
 // API接口URL列表
 export const urlList = {
-  setUserInfo: baseUrl + '/api/user/auth',        // 设置用户信息
+  setUserInfo: baseUrl + (process.env.NODE_ENV === 'development' ? '/api/user/auth' : '/api/user/login_auth'),        // 设置用户信息
   getCurrentUser: baseUrl + '/api/user/info',   // 获取当前用户信息
   createTasksImgVideo: baseUrl + '/api/task/mj/make_video',     // 创建任务-图生视频
   createTasksTextVideo: baseUrl + '/api/task/mj/make_video',     // 创建任务-文生视频
@@ -35,6 +35,7 @@ export const urlList = {
   createTasks: baseUrl + '/api/task/mj/create',  // 创建任务
 
   editImage: baseUrl + '/api/task/nano-banana/editimg', // 编辑图片
+  generateImage: baseUrl + '/api/task/gemini/editimg', // 生成图片
 }
 
 /**
@@ -107,7 +108,19 @@ export const editImage = async (data: any) => {
   }
 }
 
-
+/**
+ * 生成图片
+ * @param data 提示词
+ * @returns 图片结果
+ */
+export const generateImage = async (data: any) => {
+  try {
+    return await apiRequest(urlList.generateImage, 'POST', data, true);
+  } catch (error) {
+    console.error('生成图片失败:', error);
+    throw error;
+  }
+}
 /**
  * 创建任务-图生视频
  * @param prompt - 描述-必填

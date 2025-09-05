@@ -10,17 +10,18 @@
           <!-- Tab switcher -->
           <div class="flex w-full bg-banana-dark-bg/50 p-1 rounded-2xl">
             <button 
-              @click="activeTab = 'imageToImage'"
-              :class="['flex-1 py-3 rounded-xl transition-all duration-300 font-bold text-sm', activeTab === 'imageToImage' ? 'bg-banana-primary-yellow text-banana-dark-bg shadow-lg' : 'text-banana-text-muted hover:bg-banana-primary-yellow/20 hover:text-banana-primary-yellow']"
-            >
-              Image to Image
-            </button>
-            <button 
               @click="activeTab = 'textToImage'"
               :class="['flex-1 py-3 rounded-xl transition-all duration-300 font-bold text-sm', activeTab === 'textToImage' ? 'bg-banana-primary-yellow text-banana-dark-bg shadow-lg' : 'text-banana-text-muted hover:bg-banana-primary-yellow/20 hover:text-banana-primary-yellow']"
             >
               Text to Image
             </button>
+            <button 
+              @click="activeTab = 'imageToImage'"
+              :class="['flex-1 py-3 rounded-xl transition-all duration-300 font-bold text-sm', activeTab === 'imageToImage' ? 'bg-banana-primary-yellow text-banana-dark-bg shadow-lg' : 'text-banana-text-muted hover:bg-banana-primary-yellow/20 hover:text-banana-primary-yellow']"
+            >
+              Image to Image
+            </button>
+
           </div>
 
           <!-- Image-to-Image Panel -->
@@ -418,7 +419,7 @@ const { $toast } = useNuxtApp() as any;
 const showPromptGuide = ref(false);
 const showUploadGuide = ref(false);
 
-const activeTab = ref('imageToImage'); // 'imageToImage' or 'textToImage'
+const activeTab = ref('textToImage'); // 'imageToImage' or 'textToImage'
 const textToImagePrompt = ref('');
 
 const generateFromText = async () => {
